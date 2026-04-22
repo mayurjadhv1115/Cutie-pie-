@@ -1,0 +1,108 @@
+DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For You 🌸</title>
+    <style>
+        body {
+            margin: 0;
+            background: #ffe5ec; /* Soft Pink */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'cursive', sans-serif;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            background: white;
+            padding: 30px;
+            border-radius: 25px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            width: 80%;
+            max-width: 400px;
+            border: 5px solid #ffb3c1;
+        }
+
+        /* Sticker Container */
+        .sticker {
+            width: 150px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: #ff4d6d;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #4a4e69;
+            font-size: 18px;
+        }
+
+        .buttons {
+            margin-top: 20px;
+        }
+
+        .btn {
+            background: #ff4d6d;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: scale(1.1);
+            background: #c9184a;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHp1eXF5MHF4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4ZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/MDJ9NmCdk4N6M/giphy.gif" alt="Cute Cat" class="sticker">
+        
+        <h1>Maan jao na? ✨</h1>
+        <p>Tumhare bina mera din bilkul adhura hai... 🥺</p>
+        
+        <div class="buttons">
+            <button class="btn" onclick="celebrate()">Haan Maaf Kiya! ❤️</button>
+        </div>
+    </div>
+
+    <script>
+        function celebrate() {
+            alert("Yay! I Knew it! Love you so much! ❤️✨");
+            // Screen par phool barasne ka magic
+            for(let i=0; i<30; i++) {
+                const petal = document.createElement('div');
+                petal.innerHTML = '🌸';
+                petal.style.position = 'absolute';
+                petal.style.left = Math.random() * 100 + 'vw';
+                petal.style.top = '-20px';
+                petal.style.fontSize = Math.random() * 20 + 20 + 'px';
+                petal.style.animation = `fall ${Math.random() * 3 + 2}s linear forwards`;
+                document.body.appendChild(petal);
+            }
+        }
+
+        // Petals animation
+        const style = document.createElement('style');
+        style.innerHTML = `
+            @keyframes fall {
+                to { transform: translateY(110vh) rotate(360deg); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+
+</body>
+</html>
